@@ -1,21 +1,52 @@
 import sys
+import pandas as pd
+from sqlalchemy import create_engine
 
 
 def load_data(messages_filepath, categories_filepath):
-    pass
+    # load messages dataset and categories dataset
+    messages = pd.read_csv(messages_filepath)
+    categories = pd.read_csv(categories_filepath)
+
+    # merge datasets
+    df = categories.merge(messages, how='inner', on = ["id"])
+
+    return df
 
 
 def clean_data(df):
-    pass
+    # create a dataframe of the 36 individual category columns
+    categories = df['categories'].str.split(pat=';', expand = True)
+
+    # select the first row of the categories dataframe and extract category names
+    row = categories.iloc[0]
+    category_colnames = row.apply(lambda x: x[:-2])
+
+    # rename the columns of `categories`
+    categories.columns = category_colnames
+
+    # extract category values (0 or 1)
+    for column in categories:
+        # set each value to be the last character of the string
+        categories[column] = categories[column].str[-1]
+        categories[column] = pd.to_numeric(categories[column])
+
+    # replace categories column in df with new category columns
+    df = df.drop(columns=['categories'])
+    df = pd.concat([df,categories],axis=1)
+
+    # remove duplicates
+    df = df.drop_duplicates()
+
+    return df
 
 
 def save_data(df, database_filename):
-    pass  
-
+    engine = create_engine('sqlite:///{}'.format(database_filename))
+    df.to_sql('DisasterResponse', engine, index=False, if_exists = 'replace')
 
 def main():
     if len(sys.argv) == 4:
-
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
 
         print('Loading data...\n    MESSAGES: {}\n    CATEGORIES: {}'
