@@ -1,10 +1,10 @@
 # Disaster-Response-Pipeline
 
 ## Table of Contents
-1. [Introduction](#introduction)
-2. [Getting Started](#getting_started)
-    1. [Dependencies](#Dependencies)
-    2. [Installing](#Installing)
+1. [Description](#Description)
+2. [Getting Started](#gettingstarted)
+    1. [Software and Libraries](#libraries)
+    2. [](#)
     3. Executing Program
     4. Additional Material
 3. Authors
@@ -12,31 +12,33 @@
 5. Acknowledgement
 6. Screenshots
 
-## Description
+## Description <a name="Description"></a>
+This project is completed as a part of Udacity Data Scientist Nanodegree Program.
 
-## Getting Started <a name="#getting_started"></a>
+The goal of the project is to build an application that classifies disaster messages. The project consists of three parts:
 
-## Authors
+- ETL Pipeline
+    - Load and merge two raw disaster datasets (messages and classification categories)
+    - Clean data and store it in a SQLite database
+- ML Pipeline
+    - Load data from the SQLite database
+    - Splits data into training and test sets
+    - Build, train, evaluate ML model 
+    - Export the final models as a pickle file
+- Flask Web App
+    - Load data from the SQLite database
+    - Load the trained the model 
+    - Run an application that visualises database data and classfies a new meesage into multiple disaster categories.
 
-## License
-
-## Acknowledgement
-
-## Screenshots
-
-1. [Introduction](#introduction)
-2. [Some paragraph](#paragraph1)
-    1. [Sub paragraph](#subparagraph1)
-3. [Another paragraph](#paragraph2)
-
-## This is the introduction <a name="introduction"></a>
-Some introduction text, formatted in heading 2 style
-
-## Some paragraph <a name="paragraph1"></a>
-The first paragraph text
-
-### Sub paragraph <a name="subparagraph1"></a>
-This is a sub paragraph, formatted in heading 3 style
-
-## Another paragraph <a name="paragraph2"></a>
-The second paragraph text
+## Getting Started <a name="gettingstarted"></a>
+### Software and Libraries<a name="libraries"></a>
+Python 3.8.3 is used for the project with following libraries
+- pandas
+- sqlalchemy
+- numpy
+- re
+- nltk
+- sklearn
+- pickle
+- plotly
+- flask
