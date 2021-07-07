@@ -4,9 +4,7 @@
 1. [Description](#Description)
 2. [Getting Started](#gettingstarted)
     1. [Software and Libraries](#libraries)
-    2. [](#)
-    3. Executing Program
-    4. Additional Material
+    2. [File Description](#FileDescription)
 3. Authors
 4. License
 5. Acknowledgement
@@ -42,4 +40,8 @@ Python 3.8.3 is used for the project with following libraries
 - pickle
 - plotly
 - flask
-More informations in requirements.txt. To create it I have used python -m pip freeze > requirements.txt. To install all Python packages written in the requirements.txt file run pip install -r requirements.txt.
+
+More informations in requirements.txt which details my python environment at the time of project completion. I have used "python -m pip freeze > requirements.txt" to create the requirement.txt file.
+
+### File Description <a name="FileDescription"></a>
+
