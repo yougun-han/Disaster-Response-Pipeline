@@ -42,3 +42,4 @@ Python 3.8.3 is used for the project with following libraries
 - pickle
 - plotly
 - flask
+More informations in requirements.txt. To create it I have used python -m pip freeze > requirements.txt. To install all Python packages written in the requirements.txt file run pip install -r requirements.txt.
