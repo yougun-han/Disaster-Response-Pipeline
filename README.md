@@ -7,9 +7,8 @@
     2. [File Description](#FileDescription)
     3. [Run Program](#RunProgram)
 3. [Output(WebApp)](#Output)
-4. License
-5. Acknowledgement
-6. Screenshots
+4. [Author](#Author)
+5. [Acknowledgements](#Acknowledgements)
 
 ## Description <a name="Description"></a>
 This project is completed as a part of Udacity Data Scientist Nanodegree Program.
@@ -63,6 +62,8 @@ More informations in requirements.txt which details my python environment at the
 |   |- train_classifier.py          # python file that build models
 |   |- trained_classifier.pkl       # model created by train_classifier.py (Not in repo, but will be created upon running train_classifier.py) 
 |
+|- Images_for_README                # collection of images used for README.md
+|
 |- ETL Pipeline Preparation.ipynb   # Notebook file prior to buiding process_data.py 
 |- ML Pipeline Preparation.ipynb    # Notebook file prior to building train_classifier.py
 |- README.md
@@ -80,6 +81,21 @@ More informations in requirements.txt which details my python environment at the
     `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
 - Run Flask Web App
     
-    `python run.py`
+    `python app/run.py`
+    Go to http://0.0.0.0:3001/ or http://localhost:3001/
     
 ## Output(WebApp) <a name="Output"></a>
+- WebApp main homepage: It displays two charts and accept a message from users for classification.
+
+![MainHome](Images_for_README/MainPage.png)
+
+- Classification page: Once a message is submitted, the classification appears where the classified categories are highlighted.
+
+![Classification](Images_for_README/ClassificationImage.png)
+
+
+## Author <a name="Author"></a>
+[Yougun Han](https://www.linkedin.com/in/yougun-han/)
+
+## Acknowledgements <a name="Acknowledgements"></a>
+I would like to thank Udacity and FigureEight(data provider) for designing the project.
